@@ -8,8 +8,8 @@ find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 
-find_package(urdfdom_headers REQUIRED)
-include_directories(include ${urdfdom_headers_INCLUDE_DIRS})
+find_package(urdfdom_headers_approxik REQUIRED)
+include_directories(include ${urdfdom_headers_approxik_INCLUDE_DIRS})
 
 find_package(urdfdom REQUIRED)
 include_directories(include ${urdfdom_INCLUDE_DIRS})
@@ -44,7 +44,7 @@ endif()
 
 set(PKG_NAME ${PROJECT_NAME})
 set(PKG_LIBRARIES kdl_parser)
-set(PKG_DEPENDS urdfdom_headers urdfdom console_bridge orocos_kdl)
+set(PKG_DEPENDS urdfdom_headers_approxik urdfdom console_bridge orocos_kdl)
 set(cmake_conf_file "cmake/kdl_parser-config.cmake")
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/${cmake_conf_file}.in" "${CMAKE_BINARY_DIR}/${cmake_conf_file}" @ONLY)
 install(FILES ${CMAKE_BINARY_DIR}/${cmake_conf_file}
